@@ -15,15 +15,14 @@ class CategoryCollectionCell: UICollectionViewCell {
     
     var imgPath = ""
     
-    override func awakeFromNib() {
-        setImage(imgPath: imgPath)
-    }
-    
-    func setImage (imgPath : String) {
+
+    func setData (imgPath : String, title : String) {
         
         
         let url = URL(string: imgPath)
         imgView.kf.setImage(with: url)
+        
+        titleLabel.text = title
         
     }
 
