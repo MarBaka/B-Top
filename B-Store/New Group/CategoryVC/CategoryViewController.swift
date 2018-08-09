@@ -10,7 +10,7 @@ import UIKit
 
 class CategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var colView : UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +20,14 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         for c in result {
             print(c.title ?? "Whoops! Something went wrong")
         }
+        DataManager.manager.categories = result     
     }
     func printError(error : String) {
         print(error)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Datamanager.manager.categories.count
+        return DataManager.manager.categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

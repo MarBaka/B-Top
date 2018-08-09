@@ -9,8 +9,8 @@
 import Foundation
 
 
-class Datamanager {
-    static let manager = Datamanager()
+class DataManager {
+    static let manager = DataManager()
 
     var categories : [Category] = []
     
