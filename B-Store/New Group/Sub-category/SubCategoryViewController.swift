@@ -20,6 +20,9 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
         ServerManager.shared.getSubCategories(id: currentSubCategoryId, completion: printSubCategory, error: printError)
         navigationBar.topItem!.title = currentCategoryTitle
         
