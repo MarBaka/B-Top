@@ -58,7 +58,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView (_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoryCollectionCell
      
-        cell.setData(imgPath: self.categories[indexPath.item].category_image_url!, title: self.categories[indexPath.item].title!)
+        cell.setData(category: self.categories[indexPath.item])
         return cell
     }
     

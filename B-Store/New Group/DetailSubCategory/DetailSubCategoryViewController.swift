@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailSubCategoryViewController: UIViewController {
+class DetailSubCategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var imgView : UIImageView!
     @IBOutlet weak var titleLabel : UILabel!
@@ -19,6 +19,14 @@ class DetailSubCategoryViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        return cell
     }
     
     

@@ -16,7 +16,8 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
     var currentSubCategoryId = 0
     var currentCategoryTitle = ""
     var currentSubCategories : [SubCategory] = []
-    
+    let cellInset = 15.0 as CGFloat
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +26,9 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
         
         ServerManager.shared.getSubCategories(id: currentSubCategoryId, completion: printSubCategory, error: printError)
         navigationBar.topItem!.title = currentCategoryTitle
+        
+        collectionView.contentInset = UIEdgeInsets(top: cellInset, left: cellInset, bottom: cellInset, right: cellInset)
+
         
         
     }
@@ -47,13 +51,18 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
     func printError(error : String) {
         print(error)
     }
+    func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let widthOfCell = (UIScreen.main.bounds.width - 60 ) / 2
+        return CGSize(width: widthOfCell, height: widthOfCell)
+        
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentSubCategories.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoryCollectionCell
-        cell.setData(imgPath: self.currentSubCategories[indexPath.item].sub_category_image_url!, title: self.currentSubCategories[indexPath.item].title!)
+        cell.setData(subcategory: self.currentSubCategories[indexPath.item])
         return cell
     }
     

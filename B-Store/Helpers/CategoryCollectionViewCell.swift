@@ -16,14 +16,23 @@ class CategoryCollectionCell: UICollectionViewCell {
     var imgPath = ""
     
 
-    func setData (imgPath : String, title : String) {
+    func setData (subcategory: SubCategory) {
         
+        titleLabel.text = subcategory.title
         
-        let url = URL(string: imgPath)
+        guard let url = URL(string: subcategory.sub_category_image_url ?? "") else { return }
         imgView.kf.setImage(with: url)
         
-        titleLabel.text = title
+    }
+    
+    func setData (category: Category) {
+        
+        titleLabel.text = category.title
+        
+        guard let url = URL(string: category.category_image_url ?? "") else { return }
+        imgView.kf.setImage(with: url)
         
     }
+    
 
 }

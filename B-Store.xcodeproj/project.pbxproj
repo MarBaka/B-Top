@@ -12,6 +12,7 @@
 		7934FD79211C82CE0041F0FF /* Sub-category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FD78211C82CE0041F0FF /* Sub-category.swift */; };
 		7934FD7C211C88E40041F0FF /* SubCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FD7B211C88E40041F0FF /* SubCategoryViewController.swift */; };
 		7934FD7F211E94E70041F0FF /* DetailSubCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FD7E211E94E70041F0FF /* DetailSubCategoryViewController.swift */; };
+		7934FD81211E9BD50041F0FF /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FD80211E9BD50041F0FF /* CourseTableViewCell.swift */; };
 		797E9A06211C654A0053D60F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797E9A05211C654A0053D60F /* AppDelegate.swift */; };
 		797E9A08211C654A0053D60F /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797E9A07211C654A0053D60F /* CategoryViewController.swift */; };
 		797E9A0B211C654A0053D60F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797E9A09211C654A0053D60F /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		7934FD78211C82CE0041F0FF /* Sub-category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sub-category.swift"; sourceTree = "<group>"; };
 		7934FD7B211C88E40041F0FF /* SubCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryViewController.swift; sourceTree = "<group>"; };
 		7934FD7E211E94E70041F0FF /* DetailSubCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSubCategoryViewController.swift; sourceTree = "<group>"; };
+		7934FD80211E9BD50041F0FF /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		797E9A02211C654A0053D60F /* B-Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "B-Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		797E9A05211C654A0053D60F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		797E9A07211C654A0053D60F /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				7934FD7E211E94E70041F0FF /* DetailSubCategoryViewController.swift */,
+				7934FD80211E9BD50041F0FF /* CourseTableViewCell.swift */,
 			);
 			path = DetailSubCategory;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				797E9A19211C66700053D60F /* HTTPRequestManager.swift in Sources */,
 				797E9A1F211C66F00053D60F /* Constants.swift in Sources */,
 				797E9A24211C68300053D60F /* Category.swift in Sources */,
+				7934FD81211E9BD50041F0FF /* CourseTableViewCell.swift in Sources */,
 				7934FD79211C82CE0041F0FF /* Sub-category.swift in Sources */,
 				7934FD7F211E94E70041F0FF /* DetailSubCategoryViewController.swift in Sources */,
 				7934FD75211C6E610041F0FF /* CategoryCollectionViewCell.swift in Sources */,
