@@ -11,14 +11,29 @@ import UIKit
 class CoursesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView : UITableView!
-    
-    var courses =  []
+    var courseID = 2
+    var courses : [Course] = []
+    var title = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        ServerManager.shared.getCoursesOfSubCategory(id: courseID, completion: printCourses, error: printError)
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    func printCourses (courses : [Course]) {
+        
+        for c in courses {
+            print(c.description)
+        }
+        self.courses = courses
+        
+    }
+    func printError (error : String) {
+        print(error)
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return 2
@@ -35,10 +50,13 @@ class CoursesViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             // instansiate course header cell
-            let cell = UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "courseHeaderCell") as! CourseHeaderTableViewCell
+            cell.setData(data: self.courses[indexPath.row])
             return cell
         }
-        //return course cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell") as! CourseTableViewCell
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

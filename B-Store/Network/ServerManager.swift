@@ -45,12 +45,12 @@ class ServerManager: HTTPRequestManager {
         }
     }
     
-    func getCoursesOfSubCategory(id : Int, completion: @escaping ([SubCategory]) -> (), error: @escaping (String) -> ()) {
+    func getCoursesOfSubCategory(id : Int, completion: @escaping ([Course]) -> (), error: @escaping (String) -> ()) {
         self.get(endpoint: "\(Constants.Network.EndPoint.subcategories)\(id)/", completion: { (data) in
             //TODO
             do {
                 guard let  data = data else { return }
-                let result = try JSONDecoder().decode([SubCategory].self, from: data)
+                let result = try JSONDecoder().decode([Course].self, from: data)
                 completion(result)
             }
             catch let errorMessage {
