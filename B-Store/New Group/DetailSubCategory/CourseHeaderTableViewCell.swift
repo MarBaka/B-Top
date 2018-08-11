@@ -14,12 +14,12 @@ class CourseHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var imgView : UIImageView!
     @IBOutlet weak var titleLabel : UILabel!
     
-    func setData (data : Course, title : String) {
+    func setData (imageURL : String?, title : String) {
         
         titleLabel.text = title
         
-        guard let _ = data.logo_image_url else { return }
-        let url = URL(string: data.logo_image_url!)
+        guard let u = imageURL else { return }
+        let url = URL(string: u)
         imgView.kf.setImage(with: url)
         
     }

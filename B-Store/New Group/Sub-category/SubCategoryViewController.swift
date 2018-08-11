@@ -66,6 +66,13 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let board = UIStoryboard(name: "Main", bundle: nil)
+        let vc = board.instantiateViewController(withIdentifier: "CourseVC") as! CoursesViewController
+        vc.name = self.currentSubCategories[indexPath.row].title!
+        self.navigationController!.show(vc, sender: self)
+    }
+    
     @IBAction func backButtonTapped () {
         
         self.dismiss(animated: true, completion: nil)

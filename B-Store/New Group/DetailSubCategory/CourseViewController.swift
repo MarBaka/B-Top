@@ -13,21 +13,27 @@ class CoursesViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView : UITableView!
     var courseID = 2
     var courses : [Course] = []
-    var title = ""
+    var name  = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ServerManager.shared.getCoursesOfSubCategory(id: courseID, completion: printCourses, error: printError)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 130
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        ServerManager.shared.getCoursesOfSubCategory(id: courseID, completion: printCourses, error: printError)
+
+    }
     func printCourses (courses : [Course]) {
         
         for c in courses {
             print(c.description)
         }
         self.courses = courses
+        self.tableView.reloadData()
         
     }
     func printError (error : String) {
@@ -41,33 +47,35 @@ class CoursesViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        if section == 0 && self.courses.count != 0{
             return 1
+        } else if self.courses.count != 0 {
+            return self.courses.count
+        } else {
+            return 0
         }
-        return self.courses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             // instansiate course header cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "courseHeaderCell") as! CourseHeaderTableViewCell
-            cell.setData(data: self.courses[indexPath.row])
+            cell.setData(imageURL: self.courses[indexPath.row].main_image_url, title: name)
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell") as! CourseTableViewCell
+        cell.setData(course: self.courses[indexPath.row])
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return UIScreen.main.bounds.height / 2.5
+            return 190
         }
-        return 150
+        return UITableViewAutomaticDimension
     }
     
-    @IBAction func backButtonTapped () {
-        
-    }
+
 
 }

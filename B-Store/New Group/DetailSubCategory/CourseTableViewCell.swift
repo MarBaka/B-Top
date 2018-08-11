@@ -11,16 +11,26 @@ import Kingfisher
 
 class CourseTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var imgView : UIImageView!
+    @IBOutlet weak var logoImgView : UIImageView!
+    @IBOutlet weak var bannerImgView : UIImageView!
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var discriptionLabel : UILabel!
     
     func setData (course : Course) {
         titleLabel.text = course.title
         discriptionLabel.text = course.description
-        guard let _ = course.logo_image_url else { return }
-        let url = URL(string: course.logo_image_url!)
-        imgView.kf.setImage(with: url)
+        if let logo = course.logo_image_url  {
+            let url = URL(string: logo)
+            logoImgView.kf.setImage(with: url)
+        }
+        if let banner = course.main_image_url  {
+            let url = URL(string: banner)
+            bannerImgView.kf.setImage(with: url)
+        }
+
+
+       
+        
     }
     
 }

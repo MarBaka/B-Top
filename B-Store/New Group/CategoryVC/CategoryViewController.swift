@@ -67,7 +67,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         let vc = board.instantiateViewController(withIdentifier: "SubCategoryVC") as! SubCategoryViewController
         vc.currentCategoryTitle = self.categories[indexPath.row].title!
         vc.currentSubCategoryId = self.categories[indexPath.item].id!
-        self.show(vc, sender: self)
+        self.navigationController!.show(vc, sender: self)
     }
 }
 
