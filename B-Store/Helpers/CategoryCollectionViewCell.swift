@@ -20,7 +20,7 @@ class CategoryCollectionCell: UICollectionViewCell {
         
         titleLabel.text = subcategory.title
         
-        guard let url = URL(string: subcategory.sub_category_image_url ?? "") else { return }
+        guard let url = URL(string: subcategory.subcategory_image_url ?? "") else { return }
         imgView.kf.setImage(with: url)
         
     }

@@ -12,6 +12,6 @@ import Foundation
 class SubCategory : Decodable {
     var id : Int?
     var title : String?
-    var parent : Int?
-    var sub_category_image_url : String?
+    var parents : Int?
+    var subcategory_image_url : String?
 }
