@@ -56,5 +56,11 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
         cell.setData(imgPath: self.currentSubCategories[indexPath.item].sub_category_image_url!, title: self.currentSubCategories[indexPath.item].title!)
         return cell
     }
+    
+    @IBAction func backButtonTapped () {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
 
 }
