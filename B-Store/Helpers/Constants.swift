@@ -15,6 +15,7 @@ struct Constants {
         struct EndPoint {
             static let categories = "categories/"
             static let subcategories = "subcategories/"
+            static let cources = "courses/"
         }
         
         struct ErrorMessage {

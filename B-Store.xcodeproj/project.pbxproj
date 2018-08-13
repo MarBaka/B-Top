@@ -144,8 +144,8 @@
 		797E9A04211C654A0053D60F /* B-Store */ = {
 			isa = PBXGroup;
 			children = (
-				7934FD72211C6DFB0041F0FF /* VCs */,
 				797E9A05211C654A0053D60F /* AppDelegate.swift */,
+				7934FD72211C6DFB0041F0FF /* VCs */,
 				797E9A09211C654A0053D60F /* Main.storyboard */,
 				797E9A0C211C654B0053D60F /* Assets.xcassets */,
 				797E9A0E211C654B0053D60F /* LaunchScreen.storyboard */,
