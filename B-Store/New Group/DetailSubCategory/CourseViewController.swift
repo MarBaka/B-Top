@@ -22,6 +22,7 @@ class CoursesViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         tableView.estimatedRowHeight = 130
         tableView.rowHeight = UITableViewAutomaticDimension
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         ServerManager.shared.getCoursesOfSubCategory(id: courseID, completion: printCourses, error: printError)

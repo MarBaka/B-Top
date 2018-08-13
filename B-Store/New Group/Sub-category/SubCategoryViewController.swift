@@ -11,7 +11,7 @@ import UIKit
 class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView : UICollectionView!
-    @IBOutlet weak var navigationBar : UINavigationBar!
+
 
     var currentSubCategoryId = 0
     var currentCategoryTitle = ""
@@ -25,8 +25,7 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
         collectionView.dataSource = self
         
         ServerManager.shared.getSubCategories(id: currentSubCategoryId, completion: printSubCategory, error: printError)
-        navigationBar.topItem!.title = currentCategoryTitle
-        
+        self.navigationItem.title = currentCategoryTitle
         collectionView.contentInset = UIEdgeInsets(top: cellInset, left: cellInset, bottom: cellInset, right: cellInset)
 
         
@@ -35,7 +34,7 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
     override func viewDidAppear(_ animated: Bool) {
         
          ServerManager.shared.getSubCategories(id: currentSubCategoryId, completion: printSubCategory, error: printError)
-        navigationBar.topItem!.title = currentCategoryTitle
+        self.navigationItem.title = currentCategoryTitle
         self.collectionView.reloadData()
     }
     
@@ -73,10 +72,6 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
         self.navigationController!.show(vc, sender: self)
     }
     
-    @IBAction func backButtonTapped () {
-        
-        self.dismiss(animated: true, completion: nil)
-        
-    }
+
 
 }
