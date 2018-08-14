@@ -32,11 +32,6 @@
 		79A6BD91212304B600BE4D85 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6BD90212304B600BE4D85 /* LocationTableViewCell.swift */; };
 		79A6BD93212304ED00BE4D85 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6BD92212304ED00BE4D85 /* ContactsTableViewCell.swift */; };
 		79A6BD95212309FE00BE4D85 /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6BD94212309FE00BE4D85 /* ActionTableViewCell.swift */; };
-		79A6BD9721230C1700BE4D85 /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79A6BD9621230C1700BE4D85 /* DescriptionTableViewCell.xib */; };
-		79A6BD9921230CB500BE4D85 /* TariffTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79A6BD9821230CB500BE4D85 /* TariffTableViewCell.xib */; };
-		79A6BD9B21230E8600BE4D85 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79A6BD9A21230E8600BE4D85 /* LocationTableViewCell.xib */; };
-		79A6BD9D21230EC600BE4D85 /* ContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79A6BD9C21230EC600BE4D85 /* ContactsTableViewCell.xib */; };
-		79A6BD9F21230F6C00BE4D85 /* ActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79A6BD9E21230F6C00BE4D85 /* ActionTableViewCell.xib */; };
 		79A6BDA1212313A800BE4D85 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6BDA0212313A800BE4D85 /* HeaderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,11 +63,6 @@
 		79A6BD90212304B600BE4D85 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		79A6BD92212304ED00BE4D85 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		79A6BD94212309FE00BE4D85 /* ActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTableViewCell.swift; sourceTree = "<group>"; };
-		79A6BD9621230C1700BE4D85 /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionTableViewCell.xib; sourceTree = "<group>"; };
-		79A6BD9821230CB500BE4D85 /* TariffTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TariffTableViewCell.xib; sourceTree = "<group>"; };
-		79A6BD9A21230E8600BE4D85 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
-		79A6BD9C21230EC600BE4D85 /* ContactsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsTableViewCell.xib; sourceTree = "<group>"; };
-		79A6BD9E21230F6C00BE4D85 /* ActionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionTableViewCell.xib; sourceTree = "<group>"; };
 		79A6BDA0212313A800BE4D85 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		815983F9D731EEE12A946642 /* Pods-B-Store.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B-Store.release.xcconfig"; path = "Pods/Target Support Files/Pods-B-Store/Pods-B-Store.release.xcconfig"; sourceTree = "<group>"; };
 		885C58E3A39600DBB779013E /* Pods_B_Store.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_B_Store.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,17 +131,12 @@
 			isa = PBXGroup;
 			children = (
 				7934FD87212005880041F0FF /* DetailCourseViewController.swift */,
+				79A6BDA0212313A800BE4D85 /* HeaderTableViewCell.swift */,
 				79A6BD8C2123036000BE4D85 /* DescriptionTableViewCell.swift */,
 				79A6BD8E212303C800BE4D85 /* TariffTableViewCell.swift */,
 				79A6BD90212304B600BE4D85 /* LocationTableViewCell.swift */,
 				79A6BD92212304ED00BE4D85 /* ContactsTableViewCell.swift */,
 				79A6BD94212309FE00BE4D85 /* ActionTableViewCell.swift */,
-				79A6BDA0212313A800BE4D85 /* HeaderTableViewCell.swift */,
-				79A6BD9621230C1700BE4D85 /* DescriptionTableViewCell.xib */,
-				79A6BD9821230CB500BE4D85 /* TariffTableViewCell.xib */,
-				79A6BD9A21230E8600BE4D85 /* LocationTableViewCell.xib */,
-				79A6BD9C21230EC600BE4D85 /* ContactsTableViewCell.xib */,
-				79A6BD9E21230F6C00BE4D85 /* ActionTableViewCell.xib */,
 			);
 			path = CourseDetail;
 			sourceTree = "<group>";
@@ -288,12 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79A6BD9921230CB500BE4D85 /* TariffTableViewCell.xib in Resources */,
-				79A6BD9F21230F6C00BE4D85 /* ActionTableViewCell.xib in Resources */,
-				79A6BD9D21230EC600BE4D85 /* ContactsTableViewCell.xib in Resources */,
 				797E9A10211C654B0053D60F /* LaunchScreen.storyboard in Resources */,
-				79A6BD9B21230E8600BE4D85 /* LocationTableViewCell.xib in Resources */,
-				79A6BD9721230C1700BE4D85 /* DescriptionTableViewCell.xib in Resources */,
 				797E9A0D211C654B0053D60F /* Assets.xcassets in Resources */,
 				797E9A0B211C654A0053D60F /* Main.storyboard in Resources */,
 			);

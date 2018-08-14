@@ -11,7 +11,7 @@ import UIKit
 class TariffTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel : UILabel!
-    @IBOutlet weak var descriptionLabel : UITextView!
+    @IBOutlet weak var descriptionTextView : UITextView!
     @IBOutlet weak var priceLabel : UILabel!
     
     func setData (data : Service) {

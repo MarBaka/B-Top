@@ -17,6 +17,8 @@ class DetailCourseViewController: UIViewController, UITableViewDelegate, UITable
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+      
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -36,6 +38,14 @@ class DetailCourseViewController: UIViewController, UITableViewDelegate, UITable
             let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell") as! HeaderTableViewCell
             return cell
         }
+        
+        if indexPath.section == 1 {
+            
+            
+        }
+        
+        
+        
         let cell = UITableViewCell()
         return cell
     }

@@ -19,30 +19,79 @@ class HeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var contactsButtonSelectedView : UIView!
     @IBOutlet weak var actionButtonSelectedView : UIView!
     
+    var tableView : UITableView?
     
 
     override func awakeFromNib() {
         descriptionButtonTapped()
-        
-        infoButtonSelectedView.isHidden = true
-        locationButtonSelectedView.isHidden = true
-        contactsButtonSelectedView.isHidden = true
-        actionButtonSelectedView.isHidden = true
     }
     
     @IBAction func descriptionButtonTapped () {
         
+        descriptionButtonSelectedView.isHidden = false
+        infoButtonSelectedView.isHidden = true
+        locationButtonSelectedView.isHidden = true
+        contactsButtonSelectedView.isHidden = true
+        actionButtonSelectedView.isHidden = true
+        
+        if tableView != nil {
+            tableView!.reloadData()
+        }
+        
     }
+    
     @IBAction func infoButtonTapped () {
         
+        descriptionButtonSelectedView.isHidden = true
+        infoButtonSelectedView.isHidden = false
+        locationButtonSelectedView.isHidden = true
+        contactsButtonSelectedView.isHidden = true
+        actionButtonSelectedView.isHidden = true
+        
+        if tableView != nil {
+            tableView!.reloadData()
+        }
     }
+    
     @IBAction func locationButtonTapped () {
         
-    }
-    @IBAction func contactsButtonTapped () {
+        descriptionButtonSelectedView.isHidden = true
+        infoButtonSelectedView.isHidden = true
+        locationButtonSelectedView.isHidden = false
+        contactsButtonSelectedView.isHidden = true
+        actionButtonSelectedView.isHidden = true
+        
+        if tableView != nil {
+            tableView!.reloadData()
+        }
         
     }
+    
+    @IBAction func contactsButtonTapped () {
+        
+        descriptionButtonSelectedView.isHidden = true
+        infoButtonSelectedView.isHidden = true
+        locationButtonSelectedView.isHidden = true
+        contactsButtonSelectedView.isHidden = false
+        actionButtonSelectedView.isHidden = true
+        
+        if tableView != nil {
+            tableView!.reloadData()
+        }
+        
+    }
+    
     @IBAction func actionButtonTapped () {
+        
+        descriptionButtonSelectedView.isHidden = true
+        infoButtonSelectedView.isHidden = true
+        locationButtonSelectedView.isHidden = true
+        contactsButtonSelectedView.isHidden = true
+        actionButtonSelectedView.isHidden = false
+        
+        if tableView != nil {
+            tableView!.reloadData()
+        }
         
     }
 }
