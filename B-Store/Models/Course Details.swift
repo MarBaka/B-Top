@@ -16,23 +16,23 @@ class CourseDetails : Decodable {
     var description : String?
     var main_image_url : String?
     var logo_image_url : String?
-    var contacts : [Contacts]?
-    var branches : [Branches]?
-    var services : [Services]?
-    var actions : [Actions]?
+    var contacts : [Contact]?
+    var branches : [Branch]?
+    var services : [Service]?
+    var actions : [Action]?
     var added : String?
     var updated : String?
     
 }
 
-class Contacts : Decodable {
+class Contact : Decodable {
     
     var type : String?
     var contact : String?
     
 }
 
-class Branches : Decodable {
+class Branch : Decodable {
     
     var address : String?
     var latitude : String?
@@ -40,7 +40,7 @@ class Branches : Decodable {
     
 }
 
-class Services : Decodable {
+class Service : Decodable {
     
     var title : String?
     var description : String?
@@ -48,7 +48,7 @@ class Services : Decodable {
     
 }
 
-class Actions : Decodable {
+class Action : Decodable {
     
     var id : Int?
     var title : String?

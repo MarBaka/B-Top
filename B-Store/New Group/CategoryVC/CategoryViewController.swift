@@ -20,11 +20,19 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad () {
         super.viewDidLoad()
-        ServerManager.shared.getCategories(completion: printCategories, error: printError)        
+        ServerManager.shared.getCategories(completion: printCategories, error: printError)
+        ServerManager.shared.getCourseDetails(id: 8, completion: isGettingCourseDetails, error: printError)
         collectionView.dataSource = self
         collectionView.delegate = self
         
         collectionView.contentInset = UIEdgeInsets(top: cellInset, left: cellInset, bottom: cellInset, right: cellInset)
+    }
+    
+    func isGettingCourseDetails (data : CourseDetails) {
+        
+        print("COURSE DETAILS")
+        print(data.services![0].description)
+        
     }
     
     func printCategories (result : [Category]) {
@@ -35,7 +43,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.reloadData()
     }
     
-    func printCategories (result : SubCategory) {
+    func printSubCategories (result : SubCategory) {
        
         print(result.title ?? "Whoops! Something went wrong")
         

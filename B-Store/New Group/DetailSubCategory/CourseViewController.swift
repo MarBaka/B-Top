@@ -20,6 +20,7 @@ class CoursesViewController: UIViewController, UITableViewDelegate, UITableViewD
         ServerManager.shared.getCoursesOfSubCategory(id: courseID, completion: printCourses, error: printError)
         tableView.delegate = self
         tableView.dataSource = self
+        
         tableView.estimatedRowHeight = 130
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -75,6 +76,12 @@ class CoursesViewController: UIViewController, UITableViewDelegate, UITableViewD
             return 190
         }
         return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let board = UIStoryboard(name: "Main", bundle: nil)
+        let vc = board.instantiateViewController(withIdentifier: "courseDetailVC")
+        self.navigationController?.show(vc, sender: self)
     }
     
 
