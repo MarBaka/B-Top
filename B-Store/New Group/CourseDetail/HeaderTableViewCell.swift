@@ -19,14 +19,13 @@ class HeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var contactsButtonSelectedView : UIView!
     @IBOutlet weak var actionButtonSelectedView : UIView!
     
-    var tableView : UITableView?
-    
+    var delegate : CoursesDelegate?
 
     override func awakeFromNib() {
-        descriptionButtonTapped()
+        infoButtonTapped()
     }
     
-    @IBAction func descriptionButtonTapped () {
+    @IBAction func servicesButtonTapped () {
         
         descriptionButtonSelectedView.isHidden = false
         infoButtonSelectedView.isHidden = true
@@ -34,9 +33,9 @@ class HeaderTableViewCell: UITableViewCell {
         contactsButtonSelectedView.isHidden = true
         actionButtonSelectedView.isHidden = true
         
-        if tableView != nil {
-            tableView!.reloadData()
-        }
+
+        
+        delegate?.courseInfoEnumSelected(type: .services)
         
     }
     
@@ -48,9 +47,7 @@ class HeaderTableViewCell: UITableViewCell {
         contactsButtonSelectedView.isHidden = true
         actionButtonSelectedView.isHidden = true
         
-        if tableView != nil {
-            tableView!.reloadData()
-        }
+        delegate?.courseInfoEnumSelected(type: .description)
     }
     
     @IBAction func locationButtonTapped () {
@@ -61,10 +58,8 @@ class HeaderTableViewCell: UITableViewCell {
         contactsButtonSelectedView.isHidden = true
         actionButtonSelectedView.isHidden = true
         
-        if tableView != nil {
-            tableView!.reloadData()
-        }
-        
+
+        delegate?.courseInfoEnumSelected(type: .branches)
     }
     
     @IBAction func contactsButtonTapped () {
@@ -75,10 +70,8 @@ class HeaderTableViewCell: UITableViewCell {
         contactsButtonSelectedView.isHidden = false
         actionButtonSelectedView.isHidden = true
         
-        if tableView != nil {
-            tableView!.reloadData()
-        }
-        
+
+        delegate?.courseInfoEnumSelected(type: .contacts)
     }
     
     @IBAction func actionButtonTapped () {
@@ -89,9 +82,7 @@ class HeaderTableViewCell: UITableViewCell {
         contactsButtonSelectedView.isHidden = true
         actionButtonSelectedView.isHidden = false
         
-        if tableView != nil {
-            tableView!.reloadData()
-        }
+        delegate?.courseInfoEnumSelected(type: .services)
         
     }
 }

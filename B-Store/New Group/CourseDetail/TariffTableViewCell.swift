@@ -18,7 +18,7 @@ class TariffTableViewCell: UITableViewCell {
         
         self.titleLabel.text = data.title!
         self.priceLabel.text = data.price!
-        self.descriptionLabel.text = data.description!
+        self.descriptionTextView.text = data.description!
         
     }
 
