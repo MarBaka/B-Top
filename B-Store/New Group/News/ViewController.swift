@@ -46,9 +46,10 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! NewsTableViewCell
         if self.news?.results != nil {
-            cell.textLabel?.text = self.news!.results![indexPath.row].title!
+            
+            cell.setData(data: self.news!.results![indexPath.row])
         } else {
             cell.textLabel?.text = "NIL"
         }

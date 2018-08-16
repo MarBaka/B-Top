@@ -11,6 +11,6 @@ import Foundation
 
 protocol CoursesDelegate: class  {
     
-    func courseInfoEnumSelected (type : CourseEnum, completion : @escaping ()->()?) 
+    func courseInfoEnumSelected (type : CourseEnum) 
     
 }

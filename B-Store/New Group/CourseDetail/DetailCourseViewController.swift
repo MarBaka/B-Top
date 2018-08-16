@@ -11,10 +11,6 @@ import UIKit
 class DetailCourseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CoursesDelegate {
     
     
-    func courseInfoEnumSelected(type: CourseEnum, completion: @escaping () -> ()?) {
-        self.currentCourseInfoEnum = type
-        self.tableView.reloadData()
-    }
     
     weak var delegated : CoursesDelegate?
     @IBOutlet weak var tableView : UITableView!
@@ -40,10 +36,18 @@ class DetailCourseViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
+    func courseInfoEnumSelected(type: CourseEnum) {
+        
+        currentCourseInfoEnum = type
+        print(type)
+        tableView.reloadData()
+        
+    }
+    
     func getCourseDetails (details : CourseDetails) {
         
         self.currentCourseDetails = details
-        
+        self.tableView.reloadData()
     }
     
     func printError (error : String) {
@@ -65,15 +69,20 @@ class DetailCourseViewController: UIViewController, UITableViewDelegate, UITable
 
         if section == 0 {
             return 1
-        } else if currentCourseInfoEnum == .description {
+        }
+        if currentCourseInfoEnum == .description {
             return 1
-        } else if currentCourseInfoEnum == .services {
+        }
+        if currentCourseInfoEnum == .services {
             return self.currentCourseDetails.services!.count
-        } else if currentCourseInfoEnum == .branches {
+        }
+        if currentCourseInfoEnum == .branches {
             return self.currentCourseDetails.branches!.count
-        } else if currentCourseInfoEnum == .contacts {
+        }
+        if currentCourseInfoEnum == .contacts {
             return currentCourseDetails.contacts!.count
-        } else if currentCourseInfoEnum == .promotion {
+        }
+        if currentCourseInfoEnum == .promotion {
             return currentCourseDetails.actions!.count
         }
         return 100
@@ -83,7 +92,7 @@ class DetailCourseViewController: UIViewController, UITableViewDelegate, UITable
         if indexPath.section == 0 {
             return 350
         } else {
-            return 100
+            return UITableViewAutomaticDimension
         }
     }
     
@@ -99,40 +108,45 @@ class DetailCourseViewController: UIViewController, UITableViewDelegate, UITable
         
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell") as! HeaderTableViewCell
+            cell.setData(data: self.currentCourseDetails)
+            cell.delegate = self
             return cell
         }
         
-        if indexPath.section == 1 {
             if self.currentCourseInfoEnum == .branches {
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LocationTableViewCell") as! LocationTableViewCell
                 cell.locationLabel.text = self.currentCourseDetails.branches![indexPath.row].address
                 return cell
-            } else if self.currentCourseInfoEnum == .contacts {
+            }
+        if self.currentCourseInfoEnum == .contacts {
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell") as! ContactsTableViewCell
                 cell.setData(data: self.currentCourseDetails.contacts![indexPath.row])
                 return cell
                 
-            } else if self.currentCourseInfoEnum == .description {
+            }
+        if self.currentCourseInfoEnum == .description {
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell") as! DescriptionTableViewCell
                 cell.textView.text = self.currentCourseDetails.description!
                 return cell
                 
-            } else if self.currentCourseInfoEnum == .promotion {
+            }
+        if self.currentCourseInfoEnum == .promotion {
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ActionTableViewCell") as! ActionTableViewCell
                 cell.setData(data: self.currentCourseDetails.actions![indexPath.row])
                 return cell
                 
-            } else if self.currentCourseInfoEnum == .services {
+            }
+        if self.currentCourseInfoEnum == .services {
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TariffTableViewCell") as! TariffTableViewCell
                 cell.setData(data: self.currentCourseDetails.services![indexPath.row])
-                
+                return cell
             }
-        }
+        
         
         let cell = UITableViewCell()
         return cell

@@ -27,6 +27,7 @@
 		797E9A1D211C66C00053D60F /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797E9A1C211C66C00053D60F /* ServerManager.swift */; };
 		797E9A1F211C66F00053D60F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797E9A1E211C66F00053D60F /* Constants.swift */; };
 		797E9A24211C68300053D60F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797E9A23211C68300053D60F /* Category.swift */; };
+		79A0F9C92125B696000B2CC3 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0F9C82125B696000B2CC3 /* NewsTableViewCell.swift */; };
 		79A6BD8D2123036000BE4D85 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6BD8C2123036000BE4D85 /* DescriptionTableViewCell.swift */; };
 		79A6BD8F212303C800BE4D85 /* TariffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6BD8E212303C800BE4D85 /* TariffTableViewCell.swift */; };
 		79A6BD91212304B600BE4D85 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6BD90212304B600BE4D85 /* LocationTableViewCell.swift */; };
@@ -63,6 +64,7 @@
 		797E9A1C211C66C00053D60F /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		797E9A1E211C66F00053D60F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		797E9A23211C68300053D60F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		79A0F9C82125B696000B2CC3 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		79A6BD8C2123036000BE4D85 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		79A6BD8E212303C800BE4D85 /* TariffTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TariffTableViewCell.swift; sourceTree = "<group>"; };
 		79A6BD90212304B600BE4D85 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				79A71C0C21257E0100C03108 /* ViewController.swift */,
+				79A0F9C82125B696000B2CC3 /* NewsTableViewCell.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				7934FD79211C82CE0041F0FF /* Sub-category.swift in Sources */,
 				79D99CF6212442BE00786809 /* Extensions.swift in Sources */,
 				79A71C0D21257E0100C03108 /* ViewController.swift in Sources */,
+				79A0F9C92125B696000B2CC3 /* NewsTableViewCell.swift in Sources */,
 				7934FD83211EA6D60041F0FF /* CourseHeaderTableViewCell.swift in Sources */,
 				7934FD7F211E94E70041F0FF /* CourseViewController.swift in Sources */,
 				7934FD75211C6E610041F0FF /* CategoryCollectionViewCell.swift in Sources */,
