@@ -9,8 +9,8 @@
 import Foundation
 
 
-protocol CoursesDelegate  {
+protocol CoursesDelegate: class  {
     
-    func courseInfoEnumSelected (type : CourseEnum) 
+    func courseInfoEnumSelected (type : CourseEnum, completion : @escaping ()->()?) 
     
 }

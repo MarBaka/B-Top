@@ -79,10 +79,15 @@ class CoursesViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let board = UIStoryboard(name: "Main", bundle: nil)
-        let vc = board.instantiateViewController(withIdentifier: "courseDetailVC") as! DetailCourseViewController
-        vc.currentCourseID = self.courses[indexPath.row].id!
-        self.navigationController?.show(vc, sender: self)
+        
+        if indexPath.section != 0 {
+            
+            let board = UIStoryboard(name: "Main", bundle: nil)
+            let vc = board.instantiateViewController(withIdentifier: "courseDetailVC") as! DetailCourseViewController
+            vc.currentCourseID = self.courses[indexPath.row].id!
+            self.navigationController?.show(vc, sender: self)
+            
+        }
     }
     
 
