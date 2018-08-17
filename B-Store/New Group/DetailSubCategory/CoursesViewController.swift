@@ -29,6 +29,10 @@ class CoursesViewController: UIViewController, UITableViewDelegate, UITableViewD
         ServerManager.shared.getCoursesOfSubCategory(id: courseID, completion: printCourses, error: printError)
 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        ServerManager.shared.getCoursesOfSubCategory(id: courseID, completion: printCourses, error: printError)
+
+    }
     func printCourses (courses : [Course]) {
         
         for c in courses {
@@ -73,7 +77,7 @@ class CoursesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 190
+            return 200
         }
         return UITableViewAutomaticDimension
     }

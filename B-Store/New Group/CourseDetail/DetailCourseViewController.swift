@@ -8,8 +8,7 @@
 
 import UIKit
 
-class DetailCourseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CoursesDelegate {
-    
+class DetailCourseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CoursesDelegate, MapCoordinatesDelegate {
     
     
     weak var delegated : CoursesDelegate?
@@ -19,12 +18,16 @@ class DetailCourseViewController: UIViewController, UITableViewDelegate, UITable
     var currentCourseDetails = CourseDetails()
     var currentCourseInfoEnum : CourseEnum = .description
     
+    var indexOfBranchSelected = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
-        
+        tableView.tableFooterView = UIView()
+        tableView.estimatedRowHeight = 150
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         ServerManager.shared.getCourseDetails(id: currentCourseID, completion: getCourseDetails, error: printError)
       
@@ -42,6 +45,14 @@ class DetailCourseViewController: UIViewController, UITableViewDelegate, UITable
         print(type)
         tableView.reloadData()
         
+    }
+    
+    func showMapVC(selectedRow : Int) {
+        
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mapVC") as! MapViewController
+        vc.setData(data: self.currentCourseDetails.branches![selectedRow])
+        self.navigationController?.show(vc, sender: self)
     }
     
     func getCourseDetails (details : CourseDetails) {
@@ -113,40 +124,44 @@ class DetailCourseViewController: UIViewController, UITableViewDelegate, UITable
             return cell
         }
         
-            if self.currentCourseInfoEnum == .branches {
+        if self.currentCourseInfoEnum == .branches {
                 
-                let cell = tableView.dequeueReusableCell(withIdentifier: "LocationTableViewCell") as! LocationTableViewCell
-                cell.locationLabel.text = self.currentCourseDetails.branches![indexPath.row].address
-                return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LocationTableViewCell") as! LocationTableViewCell
+            cell.setData(text: self.currentCourseDetails.branches![indexPath.row].address!, row: indexPath.row)
+            if self.currentCourseDetails.branches![indexPath.row].latitude == nil && self.currentCourseDetails.branches![indexPath.row].longitude == nil {
+                cell.mapPointButton.isHidden = true
             }
+            cell.delegate = self
+            return cell
+        }
         if self.currentCourseInfoEnum == .contacts {
                 
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell") as! ContactsTableViewCell
-                cell.setData(data: self.currentCourseDetails.contacts![indexPath.row])
-                return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell") as! ContactsTableViewCell
+            cell.setData(data: self.currentCourseDetails.contacts![indexPath.row])
+            return cell
                 
-            }
+        }
         if self.currentCourseInfoEnum == .description {
                 
-                let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell") as! DescriptionTableViewCell
-                cell.textView.text = self.currentCourseDetails.description!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell") as! DescriptionTableViewCell
+            cell.textLbl.text = self.currentCourseDetails.description!
+            
                 return cell
                 
-            }
+        }
         if self.currentCourseInfoEnum == .promotion {
                 
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ActionTableViewCell") as! ActionTableViewCell
-                cell.setData(data: self.currentCourseDetails.actions![indexPath.row])
-                return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ActionTableViewCell") as! ActionTableViewCell
+            cell.setData(data: self.currentCourseDetails.actions![indexPath.row])
+            return cell
                 
-            }
+        }
         if self.currentCourseInfoEnum == .services {
                 
-                let cell = tableView.dequeueReusableCell(withIdentifier: "TariffTableViewCell") as! TariffTableViewCell
-                cell.setData(data: self.currentCourseDetails.services![indexPath.row])
-                return cell
-            }
-        
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TariffTableViewCell") as! TariffTableViewCell
+            cell.setData(data: self.currentCourseDetails.services![indexPath.row])
+            return cell
+        }
         
         let cell = UITableViewCell()
         return cell

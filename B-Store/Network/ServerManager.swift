@@ -78,12 +78,12 @@ class ServerManager: HTTPRequestManager {
         }
     }
     
-    func getNews(completion: @escaping (News) -> (), error: @escaping (String) -> ()) {
-        self.get(endpoint: Constants.Network.EndPoint.news, completion: { (data) in
+    func getMainPageData(pageSize: Int,pageNum : Int,completion: @escaping (MainPageData) -> (), error: @escaping (String) -> ()) {
+        self.get(endpoint: "\(Constants.Network.EndPoint.cources)?page=\(pageNum)&page_size=\(pageSize)", completion: { (data) in
             //TODO
             do {
                 guard let  data = data else { return }
-                let result = try JSONDecoder().decode(News.self, from: data)
+                let result = try JSONDecoder().decode(MainPageData.self, from: data)
                 completion(result)
             }
             catch let errorMessage {

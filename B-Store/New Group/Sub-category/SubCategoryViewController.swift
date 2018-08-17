@@ -68,7 +68,8 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let board = UIStoryboard(name: "Main", bundle: nil)
         let vc = board.instantiateViewController(withIdentifier: "CourseVC") as! CoursesViewController
-        vc.name = self.currentSubCategories[indexPath.row].title!
+        vc.name = self.currentSubCategories[indexPath.item].title!
+        vc.courseID = self.currentSubCategories[indexPath.item].id!
         self.navigationController!.show(vc, sender: self)
     }
     

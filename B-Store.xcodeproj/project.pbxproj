@@ -11,7 +11,7 @@
 		7934FD75211C6E610041F0FF /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FD74211C6E610041F0FF /* CategoryCollectionViewCell.swift */; };
 		7934FD79211C82CE0041F0FF /* Sub-category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FD78211C82CE0041F0FF /* Sub-category.swift */; };
 		7934FD7C211C88E40041F0FF /* SubCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FD7B211C88E40041F0FF /* SubCategoryViewController.swift */; };
-		7934FD7F211E94E70041F0FF /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FD7E211E94E70041F0FF /* CourseViewController.swift */; };
+		7934FD7F211E94E70041F0FF /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FD7E211E94E70041F0FF /* CoursesViewController.swift */; };
 		7934FD81211E9BD50041F0FF /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FD80211E9BD50041F0FF /* CourseTableViewCell.swift */; };
 		7934FD83211EA6D60041F0FF /* CourseHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FD82211EA6D60041F0FF /* CourseHeaderTableViewCell.swift */; };
 		7934FD85211EA8920041F0FF /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FD84211EA8920041F0FF /* Course.swift */; };
@@ -28,6 +28,8 @@
 		797E9A1F211C66F00053D60F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797E9A1E211C66F00053D60F /* Constants.swift */; };
 		797E9A24211C68300053D60F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797E9A23211C68300053D60F /* Category.swift */; };
 		79A0F9C92125B696000B2CC3 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0F9C82125B696000B2CC3 /* NewsTableViewCell.swift */; };
+		79A0F9CB2126B65E000B2CC3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0F9CA2126B65E000B2CC3 /* MapViewController.swift */; };
+		79A0F9CD2126CDF7000B2CC3 /* MapCoordinatesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0F9CC2126CDF7000B2CC3 /* MapCoordinatesDelegate.swift */; };
 		79A6BD8D2123036000BE4D85 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6BD8C2123036000BE4D85 /* DescriptionTableViewCell.swift */; };
 		79A6BD8F212303C800BE4D85 /* TariffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6BD8E212303C800BE4D85 /* TariffTableViewCell.swift */; };
 		79A6BD91212304B600BE4D85 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6BD90212304B600BE4D85 /* LocationTableViewCell.swift */; };
@@ -36,8 +38,8 @@
 		79A6BDA1212313A800BE4D85 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6BDA0212313A800BE4D85 /* HeaderTableViewCell.swift */; };
 		79A6BDA32123205200BE4D85 /* CourseEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6BDA22123205200BE4D85 /* CourseEnum.swift */; };
 		79A6BDA52123214E00BE4D85 /* CoursesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6BDA42123214E00BE4D85 /* CoursesDelegate.swift */; };
-		79A71C0A2125777E00C03108 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A71C092125777E00C03108 /* News.swift */; };
-		79A71C0D21257E0100C03108 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A71C0C21257E0100C03108 /* ViewController.swift */; };
+		79A71C0A2125777E00C03108 /* MainPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A71C092125777E00C03108 /* MainPageData.swift */; };
+		79A71C0D21257E0100C03108 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A71C0C21257E0100C03108 /* DataViewController.swift */; };
 		79D99CF6212442BE00786809 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D99CF5212442BE00786809 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +48,7 @@
 		7934FD74211C6E610041F0FF /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		7934FD78211C82CE0041F0FF /* Sub-category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sub-category.swift"; sourceTree = "<group>"; };
 		7934FD7B211C88E40041F0FF /* SubCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryViewController.swift; sourceTree = "<group>"; };
-		7934FD7E211E94E70041F0FF /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
+		7934FD7E211E94E70041F0FF /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		7934FD80211E9BD50041F0FF /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		7934FD82211EA6D60041F0FF /* CourseHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		7934FD84211EA8920041F0FF /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -65,6 +67,8 @@
 		797E9A1E211C66F00053D60F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		797E9A23211C68300053D60F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		79A0F9C82125B696000B2CC3 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		79A0F9CA2126B65E000B2CC3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		79A0F9CC2126CDF7000B2CC3 /* MapCoordinatesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinatesDelegate.swift; sourceTree = "<group>"; };
 		79A6BD8C2123036000BE4D85 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		79A6BD8E212303C800BE4D85 /* TariffTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TariffTableViewCell.swift; sourceTree = "<group>"; };
 		79A6BD90212304B600BE4D85 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
@@ -73,8 +77,8 @@
 		79A6BDA0212313A800BE4D85 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		79A6BDA22123205200BE4D85 /* CourseEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseEnum.swift; sourceTree = "<group>"; };
 		79A6BDA42123214E00BE4D85 /* CoursesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesDelegate.swift; sourceTree = "<group>"; };
-		79A71C092125777E00C03108 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
-		79A71C0C21257E0100C03108 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		79A71C092125777E00C03108 /* MainPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageData.swift; sourceTree = "<group>"; };
+		79A71C0C21257E0100C03108 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		79D99CF5212442BE00786809 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		815983F9D731EEE12A946642 /* Pods-B-Store.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B-Store.release.xcconfig"; path = "Pods/Target Support Files/Pods-B-Store/Pods-B-Store.release.xcconfig"; sourceTree = "<group>"; };
 		885C58E3A39600DBB779013E /* Pods_B_Store.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_B_Store.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +137,7 @@
 		7934FD7D211E94720041F0FF /* DetailSubCategory */ = {
 			isa = PBXGroup;
 			children = (
-				7934FD7E211E94E70041F0FF /* CourseViewController.swift */,
+				7934FD7E211E94E70041F0FF /* CoursesViewController.swift */,
 				7934FD80211E9BD50041F0FF /* CourseTableViewCell.swift */,
 				7934FD82211EA6D60041F0FF /* CourseHeaderTableViewCell.swift */,
 			);
@@ -144,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				7934FD87212005880041F0FF /* DetailCourseViewController.swift */,
+				79A0F9CA2126B65E000B2CC3 /* MapViewController.swift */,
 				79A6BDA0212313A800BE4D85 /* HeaderTableViewCell.swift */,
 				79A6BD8C2123036000BE4D85 /* DescriptionTableViewCell.swift */,
 				79A6BD8E212303C800BE4D85 /* TariffTableViewCell.swift */,
@@ -181,8 +186,8 @@
 				797E9A0C211C654B0053D60F /* Assets.xcassets */,
 				797E9A0E211C654B0053D60F /* LaunchScreen.storyboard */,
 				797E9A11211C654B0053D60F /* Info.plist */,
-				797E9A22211C681C0053D60F /* Models */,
 				797E9A17211C665A0053D60F /* Network */,
+				797E9A22211C681C0053D60F /* Models */,
 				797E9A25211C696F0053D60F /* Helpers */,
 			);
 			path = "B-Store";
@@ -206,7 +211,7 @@
 				7934FD84211EA8920041F0FF /* Course.swift */,
 				7934FD8921200AC30041F0FF /* Course Details.swift */,
 				79A6BDA22123205200BE4D85 /* CourseEnum.swift */,
-				79A71C092125777E00C03108 /* News.swift */,
+				79A71C092125777E00C03108 /* MainPageData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				797E9A1E211C66F00053D60F /* Constants.swift */,
 				79A6BDA42123214E00BE4D85 /* CoursesDelegate.swift */,
 				79D99CF5212442BE00786809 /* Extensions.swift */,
+				79A0F9CC2126CDF7000B2CC3 /* MapCoordinatesDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -225,7 +231,7 @@
 		79A71C0B2125783000C03108 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				79A71C0C21257E0100C03108 /* ViewController.swift */,
+				79A71C0C21257E0100C03108 /* DataViewController.swift */,
 				79A0F9C82125B696000B2CC3 /* NewsTableViewCell.swift */,
 			);
 			path = News;
@@ -354,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				797E9A1D211C66C00053D60F /* ServerManager.swift in Sources */,
+				79A0F9CD2126CDF7000B2CC3 /* MapCoordinatesDelegate.swift in Sources */,
 				797E9A08211C654A0053D60F /* CategoryViewController.swift in Sources */,
 				79A6BD8D2123036000BE4D85 /* DescriptionTableViewCell.swift in Sources */,
 				7934FD85211EA8920041F0FF /* Course.swift in Sources */,
@@ -374,12 +381,13 @@
 				79A6BD8F212303C800BE4D85 /* TariffTableViewCell.swift in Sources */,
 				7934FD79211C82CE0041F0FF /* Sub-category.swift in Sources */,
 				79D99CF6212442BE00786809 /* Extensions.swift in Sources */,
-				79A71C0D21257E0100C03108 /* ViewController.swift in Sources */,
+				79A71C0D21257E0100C03108 /* DataViewController.swift in Sources */,
 				79A0F9C92125B696000B2CC3 /* NewsTableViewCell.swift in Sources */,
 				7934FD83211EA6D60041F0FF /* CourseHeaderTableViewCell.swift in Sources */,
-				7934FD7F211E94E70041F0FF /* CourseViewController.swift in Sources */,
+				7934FD7F211E94E70041F0FF /* CoursesViewController.swift in Sources */,
 				7934FD75211C6E610041F0FF /* CategoryCollectionViewCell.swift in Sources */,
-				79A71C0A2125777E00C03108 /* News.swift in Sources */,
+				79A71C0A2125777E00C03108 /* MainPageData.swift in Sources */,
+				79A0F9CB2126B65E000B2CC3 /* MapViewController.swift in Sources */,
 				79A6BDA52123214E00BE4D85 /* CoursesDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

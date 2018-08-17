@@ -10,6 +10,6 @@ import UIKit
 
 class DescriptionTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var textView : UITextView!
-
+    @IBOutlet weak var textLbl : UILabel!
+    
 }

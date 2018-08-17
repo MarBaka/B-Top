@@ -9,16 +9,31 @@
 import UIKit
 import Kingfisher
 
-class NewsTableViewCell: UITableViewCell {
-
+class DataTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var logoImgView : UIImageView!
     @IBOutlet weak var mainImgView : UIImageView!
     @IBOutlet weak var titleLabel : UILabel!
-    @IBOutlet weak var descriptionTextView : UITextView!
+    @IBOutlet weak var descriptionLabel : UILabel!
     
-    func setData (data : NewsResults) {
+    override func awakeFromNib() {
         
-        self.mainImgView.kf.setImage(with: URL(string: data.news_image!))
-        self.descriptionTextView.text = data.description!
+        logoImgView.layer.cornerRadius = logoImgView.frame.height / 2.0
+        logoImgView.clipsToBounds = true
+        
+    }
+    
+    func setData (data : MainPageResult) {
+        
+        if  data.logo_image_url != nil {
+            self.logoImgView.kf.setImage(with: URL(string: data.logo_image_url!))
+        }
+        if data.main_image_url != nil {
+            self.mainImgView.kf.setImage(with: URL(string: data.main_image_url!))
+        }
+        
+        
+        self.descriptionLabel.text = data.description!
         self.titleLabel.text = data.title!
     }
 }
