@@ -26,6 +26,8 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.delegate = self
         
         collectionView.contentInset = UIEdgeInsets(top: cellInset, left: cellInset, bottom: cellInset, right: cellInset)
+        
+        self.tabBarController?.selectedIndex = 0
     }
     
     func isGettingCourseDetails (data : CourseDetails) {

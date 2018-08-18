@@ -12,7 +12,6 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBOutlet weak var collectionView : UICollectionView!
 
-
     var currentSubCategoryId = 0
     var currentCategoryTitle = ""
     var currentSubCategories : [SubCategory] = []
@@ -28,17 +27,18 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
         self.navigationItem.title = currentCategoryTitle
         collectionView.contentInset = UIEdgeInsets(top: cellInset, left: cellInset, bottom: cellInset, right: cellInset)
 
-        
-        
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         
          ServerManager.shared.getSubCategories(id: currentSubCategoryId, completion: printSubCategory, error: printError)
         self.navigationItem.title = currentCategoryTitle
         self.collectionView.reloadData()
+        
     }
     
     func printSubCategory (result : [SubCategory]) {
+        
         for sc in result {
             print(sc.title ?? "empty")
         }
@@ -50,6 +50,7 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
     func printError(error : String) {
         print(error)
     }
+    
     func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let widthOfCell = (UIScreen.main.bounds.width - 60 ) / 2
         return CGSize(width: widthOfCell, height: widthOfCell)
@@ -59,6 +60,7 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentSubCategories.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoryCollectionCell
         cell.setData(subcategory: self.currentSubCategories[indexPath.item])
@@ -72,7 +74,4 @@ class SubCategoryViewController: UIViewController, UICollectionViewDelegate, UIC
         vc.courseID = self.currentSubCategories[indexPath.item].id!
         self.navigationController!.show(vc, sender: self)
     }
-    
-
-
 }

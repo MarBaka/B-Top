@@ -27,10 +27,5 @@ class CourseTableViewCell: UITableViewCell {
             let url = URL(string: banner)
             bannerImgView.kf.setImage(with: url)
         }
-
-
-       
-        
     }
-    
 }

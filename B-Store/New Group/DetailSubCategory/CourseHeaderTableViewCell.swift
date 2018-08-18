@@ -23,5 +23,4 @@ class CourseHeaderTableViewCell: UITableViewCell {
         imgView.kf.setImage(with: url)
         
     }
-
 }

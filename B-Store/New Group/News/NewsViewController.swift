@@ -57,9 +57,14 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsTableViewCell
         
         cell.setData(data: news!.results![indexPath.section])
-        
-        
+
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailNewsVC") as! DetailNewsViewController
+        vc.data = self.news!.results![indexPath.section]
+        self.navigationController?.show(vc, sender: self)
     }
     
 }
