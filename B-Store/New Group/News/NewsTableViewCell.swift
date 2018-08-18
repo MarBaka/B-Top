@@ -2,38 +2,38 @@
 //  NewsTableViewCell.swift
 //  B-Store
 //
-//  Created by Marat on 16.08.2018.
+//  Created by Marat on 17.08.2018.
 //  Copyright © 2018 Marat. All rights reserved.
 //
 
 import UIKit
 import Kingfisher
 
-class DataTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var logoImgView : UIImageView!
-    @IBOutlet weak var mainImgView : UIImageView!
+class NewsTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var imgView : UIImageView!
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var descriptionLabel : UILabel!
+    @IBOutlet weak var dateAdded : UILabel!
     
     override func awakeFromNib() {
-        
-        logoImgView.layer.cornerRadius = logoImgView.frame.height / 2.0
-        logoImgView.clipsToBounds = true
-        
+        let font = UIFont.boldSystemFont(ofSize: 17.0)
+        titleLabel.font = font
     }
     
-    func setData (data : MainPageResult) {
+    func setData (data : NewsResults) {
         
-        if  data.logo_image_url != nil {
-            self.logoImgView.kf.setImage(with: URL(string: data.logo_image_url!))
-        }
-        if data.main_image_url != nil {
-            self.mainImgView.kf.setImage(with: URL(string: data.main_image_url!))
+        if data.news_image != nil {
+            imgView.kf.setImage(with: URL(string: data.news_image!))
         }
         
+        titleLabel.text = data.title
+        descriptionLabel.text = data.description
         
-        self.descriptionLabel.text = data.description!
-        self.titleLabel.text = data.title!
+        let date = data.added!.components(separatedBy: "-")
+        
+        dateAdded.text = "Добавлено \(date[2]).\(date[1]).\(date[0])"
+        
     }
+
 }
